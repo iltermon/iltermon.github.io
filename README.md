@@ -1,1 +1,0 @@
-# ilterkaankaraca.github.io
