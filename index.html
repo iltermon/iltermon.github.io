@@ -1,1 +1,33 @@
-Selam there
+<html>
+
+    <head>
+    </head>
+
+    <body>
+        <p id="co2"></p>
+        <script>
+            
+                var url = "https://global-warming.org/api/co2-api";
+                var xhr = new XMLHttpRequest();
+                var lastOpeningQuote;
+                var lastClosingQuote; 
+                
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState == 4) {
+                        if (xhr.status == 200) {
+                            var response = xhr.responseText;
+                            lastOpeningQuote = response.lastIndexOf(':') + 2;
+                            lastClosingQuote = response.lastIndexOf('"');
+                            document.write(response.substring(lastOpeningQuote, lastClosingQuote));
+                        } else 
+                            console.log("Error: " + xhr.status);
+                        }
+                    }
+                    xhr.open("GET", url, true);
+                    xhr.send();
+            
+            </script>
+    </body>
+        
+
+</html>
