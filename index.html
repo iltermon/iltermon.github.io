@@ -12,7 +12,7 @@
                 var lastOpeningQuote;
                 var lastClosingQuote; 
                 
-                xhr.onreadystatechange = function() {
+                xhr.onloadstart = function() {
                     if (xhr.readyState == 4) {
                         if (xhr.status == 200) {
                             var response = xhr.responseText;
