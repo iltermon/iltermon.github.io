@@ -1,33 +1,18 @@
-<html>
-
-    <head>
-    </head>
-
-    <body>
-        <p id="co2"></p>
-        <script>
-            
-                var url = "https://global-warming.org/api/co2-api";
-                var xhr = new XMLHttpRequest();
-                var lastOpeningQuote;
-                var lastClosingQuote; 
-                
-                xhr.onloadstart = function() {
-                    if (xhr.readyState == 4) {
-                        if (xhr.status == 200) {
-                            var response = xhr.responseText;
-                            lastOpeningQuote = response.lastIndexOf(':') + 2;
-                            lastClosingQuote = response.lastIndexOf('"');
-                            document.write(response.substring(lastOpeningQuote, lastClosingQuote));
-                        } else 
-                            console.log("Error: " + xhr.status);
-                        }
-                    }
-                    xhr.open("GET", url, true);
-                    xhr.send();
-            
-            </script>
-    </body>
-        
-
-</html>
+"02000": {
+      "ags": "02000",
+      "name": "Hamburg",
+      "county": "SK Hamburg",
+      "population": 1847253,
+      "cases": 37535,
+      "deaths": 661,
+      "casesPerWeek": 2027,
+      "deathsPerWeek": 2,
+      "recovered": 27864,
+      "weekIncidence": 109.73050253538634,
+      "casesPer100k": 2031.9360693960166,
+      "delta": {
+        "cases": 0,
+        "deaths": 0,
+        "recovered": 350
+      }
+    }
